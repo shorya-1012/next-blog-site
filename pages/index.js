@@ -31,7 +31,7 @@ export default function Home({ blogs }) {
           <div className="w-[80%] h-[1px] bg-black"></div>
           <h4 className="text-xl text-center my-1">ABOUT THE AUTHOR</h4>
           <div className="w-[80%] h-[1px] bg-black"></div>
-          <p className="w-[80%] my-3">This blog site was made by Shorya Jain</p>
+          <p className="text-center w-[80%] my-3">This blog site was made by Shorya Jain</p>
         </div>
       </div>
       <Footer />

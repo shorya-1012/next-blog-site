@@ -20,7 +20,7 @@ export default function slides(props) {
             <Link href={'/blogs/' + props.blogs[currSlide].id}>
                 <div style={{ backgroundImage: `url(${props.blogs[currSlide].imageURL})` }} className="slide-image w-full h-full rounded-2xl bg-center bg-cover duration-700 mix-blend-overlay"></div>
 
-                <div className='absolute top-[75%] pr-4 text-2xl text-white w-full '>
+                <div className='absolute top-[75%] pr-4 text-xl mx-auto md:text-2xl text-white w-[92%]'>
                     <h2 className='text-center font-semibold duration-700 '>{props.blogs[currSlide].title}</h2>
                 </div>
             </Link>

@@ -28,19 +28,31 @@ export default function NavBar() {
                     </div>
                     <span className='md:text-2xl text-xl font-lobster '>Uncharted Musings</span>
                 </div>
-                <button className='md:hidden absolute right-4 top-5' onClick={handleToggle} >
+                <button className='md:hidden absolute right-4 top-6' onClick={handleToggle} >
                     {toggle ? <MdOutlineClose size={'25px'} /> : <GiHamburgerMenu size={'22px'} />}
                 </button>
+                <div className='md:hidden absolute right-14 top-5 '>
+                    <SignedOut>
+                        <Link href={'/sign-in'}>
+                            <div className='h-max w-max px-2 pb-2 pt-1 text-white text-sm rounded-xl bg-blue-500 duration-75 md:my-0'>Sign In</div>
+                        </Link>
+                    </SignedOut>
+                    <SignedIn>
+                        <UserButton />
+                    </SignedIn>
+                </div>
                 <div className={`w-full md:w-[38%] z-20 bg-white absolute md:static ${css.visibility} md:ml-3 md:shadow-none shadow-2xl`}>
                     <ul className={`h-[100%] w-[100vw] md:w-auto flex flex-col md:flex-row justify-around items-center`}>
                         <li className='hover:font-semibold duration-75 md:my-0 mt-7'><Link href={'/'} >Home</Link></li>
-                        <li className='hover:font-semibold duration-75 md:my-0 mt-7'><Link href={'/about'}>About</Link></li>
-                        <SignedOut>
-                            <li className='hover:font-semibold duration-75 md:my-0 mt-7'><Link href={'/sign-in'}>Sign In</Link></li>
-                        </SignedOut>
-                        <SignedIn>
-                            <UserButton />
-                        </SignedIn>
+                        <li className='hover:font-semibold duration-75 md:my-0 my-7'><Link href={'/about'}>About</Link></li>
+                        <div className='hidden md:block'>
+                            <SignedOut>
+                                <li className='hover:font-semibold duration-75 md:my-0'><Link href={'/sign-in'}>Sign In</Link></li>
+                            </SignedOut>
+                            <SignedIn>
+                                <UserButton />
+                            </SignedIn>
+                        </div>
                     </ul>
                 </div>
             </nav >
