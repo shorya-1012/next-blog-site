@@ -34,7 +34,7 @@ export default function NavBar() {
                 <div className='md:hidden absolute right-14 top-5 '>
                     <SignedOut>
                         <Link href={'/sign-in'}>
-                            <div className='h-max w-max px-2 pb-2 pt-1 text-white text-sm rounded-xl bg-blue-500 duration-75 md:my-0'>Sign In</div>
+                            <div className='h-max w-max px-2 py-2  text-white text-sm rounded-xl bg-blue-500 duration-75 md:my-0'>Sign In</div>
                         </Link>
                     </SignedOut>
                     <SignedIn>
