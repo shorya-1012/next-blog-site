@@ -52,7 +52,7 @@ export async function getStaticProps({ params }) {
 
     data.imageURL = await getImages(data.id)
 
-    return { props: { blog: data } }
+    return { props: { blog: data }, revalidate: 10 }
 
 }
 
