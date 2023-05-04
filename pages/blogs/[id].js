@@ -39,7 +39,7 @@ export async function getStaticPaths() {
     }))
 
 
-    return { paths, fallback: false }
+    return { paths, fallback: 'blocking' }
 
 }
 
@@ -72,30 +72,3 @@ async function getImages(id) {
     }
 }
 
-
-    // let { data } = await supabase.from('blogs').select()
-
-    // const blogsData = data
-
-    // let blogDetails;
-
-    // for (let i = 0; i < data.length; i++) {
-    //     if (blogsData[i].id == params.id) {
-    //         blogDetails = blogsData[i]
-    //         const { data, error } = await supabase
-    //             .storage
-    //             .from('blog-images')
-    //             .list(blogDetails.id, {
-    //                 limit: 100,
-    //                 offset: 0,
-    //                 sortBy: { column: 'name', order: 'asc' }
-    //             })
-    //         if (data !== null) {
-    //             const imageURL = "https://owrwsajksrwgdfssrskn.supabase.co/storage/v1/object/public/blog-images/" + blogDetails.id + '/' + data[0].name
-
-    //             blogDetails.imageURL = imageURL
-    //         }
-    //     }
-    // }
-
-    // return { props: { blog: blogDetails } }
