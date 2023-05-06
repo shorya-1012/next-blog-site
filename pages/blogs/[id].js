@@ -3,6 +3,16 @@ import { supabase } from "@/lib/supabaseClient"
 import Footer from "@/components/Footer";
 
 export default function BlogPage({ blog }) {
+
+    if (blog.notFound) {
+        return (
+            <div className="flex flex-col h-[90vh] justify-center items-center">
+                <h1 className="text-3xl mb-5">Error : 404 </h1>
+                <h2 className="text-xl">Page not found</h2>
+            </div>
+        )
+    }
+
     const timestamp = blog.created_at
     const date = timestamp.substr(0, timestamp.indexOf("T"));
 
@@ -29,30 +39,25 @@ export default function BlogPage({ blog }) {
 }
 
 
-export async function getStaticPaths() {
+export async function getServerSideProps(context) {
 
-    let { data } = await supabase.from('blogs').select()
+    const id = context.params.id
 
-    const paths = data.map((post) => ({
-        // params: { slug: post.title.replace(/\s/g, '') },
-        params: { id: post.id }
-    }))
-
-
-    return { paths, fallback: 'blocking' }
-
-}
-
-export async function getStaticProps({ params }) {
     const { data, error } = await supabase
         .from('blogs')
         .select('*')
-        .eq('id', params.id)
+        .eq('id', id)
         .single()
 
-    data.imageURL = await getImages(data.id)
+    if (data) {
+        data.imageURL = await getImages(data.id)
+        data.notFound = false
+    }
+    else {
+        return { props: { blog: { notFound: true } } }
+    }
 
-    return { props: { blog: data }, revalidate: 100 }
+    return { props: { blog: data } }
 
 }
 

@@ -19,19 +19,13 @@ export default function Home({ blogs }) {
     < div className="overflow-x-hidden" >
       <NavBar />
       <Slides blogs={featuredBlogs} />
-      <div className="max-w-[1440px] mx-auto flex justify-between w-full h-auto">
-        <div className="cards-holder w-full md:w-[80%] h-auto py-5 px-5 grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 ">
+      <div className="max-w-[1440px] mx-auto flex justify-center w-full h-auto">
+        <div className="cards-holder w-full md:w-[80%] h-auto py-5 px-5 grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-3 ">
           {
             blogs.map(blog => {
               return (<Card key={blog.id} details={blog} />)
             })
           }
-        </div>
-        <div className="w-[20%] mt-10 hidden md:flex md:flex-col md:items-center ">
-          <div className="w-[80%] h-[1px] bg-black"></div>
-          <h4 className="text-xl text-center my-1">ABOUT THE AUTHOR</h4>
-          <div className="w-[80%] h-[1px] bg-black"></div>
-          <p className="text-center w-[80%] my-3">This blog site was made by Shorya Jain</p>
         </div>
       </div>
       <Footer />

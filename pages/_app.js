@@ -4,7 +4,7 @@ import LoadingBar from 'react-top-loading-bar'
 import { useEffect, useState } from 'react';
 import Router from 'next/router';
 import { Lobster } from 'next/font/google'
-import { ClerkProvider, SignIn, SignedIn, SignedOut } from '@clerk/nextjs';
+import { ClerkProvider } from '@clerk/nextjs';
 
 const lobster = Lobster({
   subsets: ['latin'],
