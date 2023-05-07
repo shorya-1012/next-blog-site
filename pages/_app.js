@@ -3,12 +3,18 @@ import Head from "next/head";
 import LoadingBar from 'react-top-loading-bar'
 import { useEffect, useState } from 'react';
 import Router from 'next/router';
-import { Lobster } from 'next/font/google'
+import { Lobster, Righteous } from 'next/font/google'
 import { ClerkProvider } from '@clerk/nextjs';
 
 const lobster = Lobster({
   subsets: ['latin'],
   variable: '--font-lobster',
+  weight: '400'
+})
+
+const righteous = Righteous({
+  subsets: ['latin'],
+  variable: '--font-righteous',
   weight: '400'
 })
 
@@ -27,8 +33,8 @@ export default function App({ Component, pageProps }) {
   }, [])
 
   return (
-    <ClerkProvider>
-      <div className={`${lobster.variable}`}>
+    <ClerkProvider publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}>
+      <div className={` ${righteous.variable}`}>
         <LoadingBar
           color='#8573ff'
           progress={progress}

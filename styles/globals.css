@@ -9,7 +9,7 @@
     display: block;
     position: absolute;
     top: 0;
-    width: 93%;
+    width: 94%;
     height: 370px;
     padding-top: 1.25rem;
     padding-bottom: 1.25rem;
@@ -20,7 +20,7 @@
 
 @media (max-width: 767px) {
     .slide-image:before {
-        width: 90%;
+        width: 95%;
     }
 }
 

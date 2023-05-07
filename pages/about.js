@@ -14,7 +14,7 @@ export default function AboutPage() {
     }, [])
 
     return (
-        <div className="overflow-x-hidden">
+        <div className="overflow-x-hidden bg-[#0f0f0f] text-white">
             <NavBar />
             <div className=" flex flex-col md:flex-row md:justify-around items-center w-screen h-[90vh] ">
                 <div className="flex flex-col items-center mt-8 md:mt-0 w-full md:w-[50%]">

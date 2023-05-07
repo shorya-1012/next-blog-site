@@ -16,7 +16,8 @@ module.exports = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       fontFamily: {
-        lobster: ['var(--font-lobster)']
+        lobster: ['var(--font-lobster)'],
+        righteous: ['var(--font-righteous)']
       }
     },
   },
